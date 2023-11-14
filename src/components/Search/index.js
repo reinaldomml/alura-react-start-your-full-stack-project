@@ -27,7 +27,7 @@ function Search() {
                 <div className='hero-content text-center'>
                     <div className='max-w-md'>
                         {searchedBooks.map((book) => (
-                            <div className='bg-base-100 p-4 mt-4 rounded-md'>
+                            <div className='bg-base-100 p-4 mt-4 rounded-md cursor-pointer'>
                                 <div className='flex items-center gap-4'>
                                     <div>
                                         <p className='text-4xl font-bold text-neutral-content'>
