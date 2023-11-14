@@ -1,20 +1,49 @@
 import { useState } from 'react'
+import { books } from './dataSearch'
 
 function Search() {
-    const [query, setQuery] = useState('')
+    const [searchedBooks, setsearchedBooks] = useState([])
 
     return (
-        <div className='navbar bg-base-100 justify-center'>
-            <div className='form-control py-2'>
-                <input
-                    type='text'
-                    placeholder='Escreva sua próxima leitura'
-                    className='input input-bordered w-64 lg:w-80'
-                    onBlur={(e) => setQuery(e.target.value)}
-                />
+        <div>
+            <div className='navbar bg-base-100 justify-center'>
+                <div className='form-control py-2'>
+                    <input
+                        type='text'
+                        placeholder='Escreva sua próxima leitura'
+                        className='input input-bordered w-64 lg:w-80'
+                        onBlur={(e) => {
+                            const textTyped = e.target.value
+                            const resultSearch = books.filter((book) =>
+                                book.title.toLowerCase().includes(textTyped.toLowerCase()),
+                            )
+                            setsearchedBooks(resultSearch)
+                        }}
+                    />
+                </div>
+                <button className='btn btn-secondary ml-2'>Buscar</button>
             </div>
-            <button className='btn btn-secondary ml-2'>Buscar</button>
-            <div className='badge badge-neutral text-white w-60 h-12 ml-4'>{query}</div>
+            <div className='hero min-h-screen bg-base-200'>
+                <div className='hero-content text-center'>
+                    <div className='max-w-md'>
+                        {searchedBooks.map((book) => (
+                            <div className='bg-base-100 p-4 mt-4 rounded-md'>
+                                <div className='flex items-center gap-4'>
+                                    <div>
+                                        <p className='text-4xl font-bold text-neutral-content'>
+                                            {book.title}
+                                        </p>
+                                        <p className='text-primary text-sm mt-1 bg-de'>
+                                            0{book.id}
+                                        </p>
+                                    </div>
+                                    <img src={book.src} alt={book.title} />
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
