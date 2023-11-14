@@ -33,7 +33,11 @@ function MenuDesktop() {
             <ul className='menu menu-horizontal px-1'>
                 {icons.map((icon, index) => (
                     <li key={index}>
-                        <img className='ml-1 max-h-10 hover:bg-secondary' src={icon} alt='icon' />
+                        <img
+                            className='btn btn-ghost ml-1 max-h-10 hover:bg-secondary'
+                            src={icon}
+                            alt='icon'
+                        />
                     </li>
                 ))}
             </ul>

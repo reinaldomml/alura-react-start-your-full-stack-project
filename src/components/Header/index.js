@@ -13,7 +13,7 @@ function Header() {
             </div>
             <MenuDesktop />
             <div className='navbar-end'>
-                <a className='btn'>Ofertas</a>
+                <a className='btn btn-sm'>Ver Ofertas</a>
             </div>
         </div>
     )

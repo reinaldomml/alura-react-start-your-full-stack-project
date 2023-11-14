@@ -49,7 +49,11 @@ function MenuMobile() {
                     <ul>
                         {icons.map((icon, index) => (
                             <li key={index}>
-                                <img className='hover:bg-secondary mt-1' src={icon} alt='icon' />
+                                <img
+                                    className='btn btn-ghost hover:bg-secondary mt-1'
+                                    src={icon}
+                                    alt='icon'
+                                />
                             </li>
                         ))}
                     </ul>
