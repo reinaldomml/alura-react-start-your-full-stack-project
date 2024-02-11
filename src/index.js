@@ -1,13 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import App from './routes/App'
+import App from './routes/app'
 import reportWebVitals from './reportWebVitals'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
-import Category from './routes/Category'
-import Estante from './routes/Estante'
-import Favorites from './routes/Favorites'
+import Category from './routes/category'
+import Estante from './routes/estante'
+import Favorites from './routes/favorites'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(

@@ -1,4 +1,4 @@
-import './App.css'
+import './app.css'
 
 import Search from '../components/Search/index'
 import LastBooks from '../components/LastBooks/index'

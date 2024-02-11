@@ -1,8 +1,25 @@
-import { useState } from 'react'
-import { books } from './dataSearch'
+import { useEffect, useState } from 'react'
+import { getBooks } from '../../services/books'
+import { postFavorities } from '../../services/favorities'
+// import { books } from './dataSearch'
 
 function Search() {
     const [searchedBooks, setsearchedBooks] = useState([])
+    const [books, setBooks] = useState([])
+
+    useEffect(() => {
+        fetchBooks()
+    }, [])
+
+    async function fetchBooks() {
+        const booksFromAPI = await getBooks()
+        setBooks(booksFromAPI)
+    }
+
+    async function insertFavorites(id) {
+        await postFavorities(id)
+        alert(`Livro de id:${id} inserido!`)
+    }
 
     return (
         <div>
@@ -27,7 +44,10 @@ function Search() {
                 <div className='hero-content text-center'>
                     <div className='max-w-md'>
                         {searchedBooks.map((book) => (
-                            <div className='bg-base-100 p-4 mt-4 rounded-md cursor-pointer'>
+                            <div
+                                onClick={() => insertFavorites(book.id)}
+                                className='bg-base-100 p-4 mt-4 rounded-md cursor-pointer'
+                            >
                                 <div className='flex items-center gap-4'>
                                     <div>
                                         <p className='text-4xl font-bold text-neutral-content'>
