@@ -28,9 +28,9 @@ function MenuMobile() {
                     className='menu menu-lg dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52'
                 >
                     <li>
-                        <a>Categoria</a>
-                        <a>Minha estante</a>
-                        <a>Favoritos</a>
+                        <a href='/category'>Categoria</a>
+                        <a href='/estante'>Minha estante</a>
+                        <a href='/favorites'>Favoritos</a>
                     </li>
                     {/* <li>
                             <a>Parent</a>

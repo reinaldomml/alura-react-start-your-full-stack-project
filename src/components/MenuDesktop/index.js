@@ -8,13 +8,13 @@ function MenuDesktop() {
         <div className='navbar-center hidden lg:flex'>
             <ul className='menu menu-horizontal px-1'>
                 <li>
-                    <a>Categoria</a>
+                    <a href='/category'>Categoria</a>
                 </li>
                 <li>
-                    <a>Minha estante</a>
+                    <a href='/estante'>Minha estante</a>
                 </li>
                 <li>
-                    <a>Favoritos</a>
+                    <a href='/favorites'>Favoritos</a>
                 </li>
                 {/* <li tabIndex={0}>
                         <details>
